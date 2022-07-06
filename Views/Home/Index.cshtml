@@ -1,8 +1,31 @@
-﻿@{
+﻿@model dotnetNewProject.Controllers.Person
+@* @model registrationForm.Controllers *@
+
+
+@{
+    
     ViewData["Title"] = "Home Page";
 }
 
 <div class="text-center">
     <h1 class="display-4">Welcome</h1>
-    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with Claribel</a>.</p>
+    <p>Your person's name is @Model.Name </p>
 </div>
+
+<form action="POST">
+    <input type="text" name="IsCat" >
+    <input type="text"/>
+    <input type="submit" value="Submit">
+</form>
+
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+<div class="text-center">
+    <h1 class="display-4">Welcome</h1>
+    <p>Learn about <a href="https://docs.microsoft.com/aspnet/core">building Web apps with ASP.NET Core</a>.</p>
+
+    <p> <a asp-action="form">Registration form</a>   </p>
+</div>
+
