@@ -53,33 +53,6 @@ public class HomeController : Controller
         return View();
     }
 
-
-
-
-
-
-    [HttpGet]
-    public ActionResult Leaderboard()
-    {
-        IList<Player> playersList = new List<Player>() {
-
-                new Player(){ PlayerID=1, PlayerFirstName="Steve", Age = 21 },
-                new Player(){ PlayerID=2, PlayerFirstName="Bill", Age = 25 },
-                new Player(){ PlayerID=3, PlayerFirstName="Ram", Age = 20 },
-                new Player(){ PlayerID=4, PlayerFirstName="Ron", Age = 31 },
-                new Player(){ PlayerID=5, PlayerFirstName="Rob", Age = 19 }
-            };
-
-        ViewData["players"] = playersList;
-
-        return View();
-    }
-
-
-
-
-
-
     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
     public IActionResult Error()
     {
