@@ -1,0 +1,13 @@
+﻿@using dotnetNewProject.Models
+
+
+
+
+<ul>
+@foreach (var player in ViewData["players"] as IList<Player>)
+{
+    <li>
+        @player.PlayerFirstName
+    </li>
+}
+</ul>
