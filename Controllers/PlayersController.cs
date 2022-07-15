@@ -1,7 +1,5 @@
-
 using dotnetNewProject.Models;
 using Microsoft.AspNetCore.Mvc;
-
 
 namespace PlayersList;
 
@@ -35,6 +33,4 @@ public class PlayersController : Controller
         // pro - saves typing, less noisy
 
     }
-
-
 }

@@ -1,7 +1,5 @@
 ﻿@using dotnetNewProject.Models
-
-
-
+@model Player
 
 <ul>
 @foreach (var player in ViewData["players"] as IList<Player>)
@@ -9,5 +7,12 @@
     <li>
         @player.PlayerFirstName
     </li>
+   
 }
-</ul>
+<div>
+<dl class="row">
+    <dt class="col-sm-2">
+        @Html.DisplayNameFor(model => model.PlayerFirstName)
+    </dt>
+  @ViewBag.name
+</div>

@@ -1,28 +1,29 @@
 using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
+using dotnetNewProject.Models;
 
 namespace registrationForm.Controllers;
 
 public class FormController : Controller
 {
-    private readonly ILogger<FormController> _logger;
 
-    public FormController(ILogger<FormController> logger)
+    public IActionResult Login()
     {
-        _logger = logger;
+        return View(new Player());
     }
 
-       public IActionResult Login()
+
+    [HttpPost]
+    public ActionResult Login(Player player)
     {
+
+        ViewBag.name = player.PlayerFirstName;
+
         return View();
     }
+
 }
-//     [ResponseCache(Duration = 0, Location = ResponseCacheLocation.None, NoStore = true)]
-//     public IActionResult Error()
-//     {
-//         return View(new ErrorViewModel { RequestId = Activity.Current?.Id ?? HttpContext.TraceIdentifier });
-//     }
-// }
+
 
 
 

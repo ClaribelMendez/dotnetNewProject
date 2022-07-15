@@ -1,5 +1,4 @@
-﻿@model dotnetNewProject.Controllers.Person
-@* @model registrationForm.Controllers *@
+﻿@model dotnetNewProject.Controllers.Person;
 
 
 @{
@@ -12,11 +11,7 @@
     <p> @Model.Name </p>
 </div>
 
-<form action="POST">
-    <input type="text" name="IsCat" >
-    <input type="text"/>
-    <input type="submit" value="Submit">
-</form>
+
 
 @{
     ViewData["Title"] = "Home Page";
@@ -24,6 +19,6 @@
 
 <div class="text-center">
    
-    <p> <a asp-action="form">Registration form</a>   </p>
+    <p> <a asp-action="Login">Registration form</a>   </p>
 </div>
 

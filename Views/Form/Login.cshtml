@@ -1,0 +1,29 @@
+@model Player
+@using registrationForm.Controllers;
+
+@{
+    ViewData["Title"] = "Register";
+}
+
+<h1>Register</h1>
+
+@using  (Html.BeginForm("Login", "Form", FormMethod.Post))
+{
+    <div>
+        
+        First Name: @Html.TextBoxFor(m => m.PlayerFirstName)
+    </div>
+     <div>
+        Last Name: @Html.TextBox("Last Name")
+    </div>
+     <div>
+        Age: @Html.TextBox("Age")
+    </div>
+     <div>
+        <input type="submit" value="Submit"/>
+    </div>
+}
+
+ @ViewBag.name
+
+
