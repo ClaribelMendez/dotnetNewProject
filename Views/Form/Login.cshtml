@@ -1,4 +1,4 @@
-@model NewPlayer
+@model NewPlayer;
 @using registrationForm.Controllers;
 
 @{
@@ -7,33 +7,38 @@
 
 <h1>Register</h1>
 
-@using Html.BeginForm("Login", "Form", FormMethod.Post))
+@using (Html.BeginForm("Login", "Form", FormMethod.Post))
 {
     <div>
 
     @* NOTE: First Name: @Html.TextBoxFor(m => m.PlayerFirstName) *@
 
-    First Name:
-    <br>
+        First Name:
+            <br>
 
-    @Html.TextBox("PlayerFirstName")
-    @Html.ValidationMessage("PlayerFirstName")
+            @Html.TextBox("PlayerFirstName")
+            @Html.ValidationMessage("PlayerFirstName")
+            <br>
+
+        Last Name:
+            <br>
+            @Html.TextBox("PlayerLastName") 
+            <br>
+
+        Age:
+            <br>
+            @Html.TextBox("Age")
+            <br>
+            <br>
+
+            @Html.DropDownListFor(m => m.PlayerTeam, new List<SelectListItem>
+                   { new SelectListItem{Text="Creators", Value="Creators"},
+                     new SelectListItem{Text="Discovery", Value="Discover"},
+                     new SelectListItem{Text="Reach", Value="Reach"}}, "Select your team")
+            <br>
+            <br>
+
+
+        <input type="submit" value="Submit" />
     </div>
- <div>
-Last Name:
-    br>
-   @Html.TextBox("PlayerLastName") 
-
-    <div>
-    Age:
-   <br>
-   </div>
-    @* <div>
-    Have you played before?:
-    <br>
-    @Html.DropDownList("PlayerExperience")
-</div> *@
-    <div>
-    <input type="submit" value="Submit" />
-</div>
 }
