@@ -1,0 +1,60 @@
+﻿@using dotnetNewProject.Models
+@model NewPlayer
+
+<ul>
+    @foreach (var player in ViewData["players"] as IList<NewPlayer>)
+    {
+        <li>
+            @player.PlayerFirstName @player.PlayerLastName @player.Age
+            <hr>
+
+        </li>
+    }
+    <div>
+
+        <li>
+            @TempData["firstName"] @TempData["lastName"]
+        </li>
+    </div>
+    <hr>
+
+
+
+    <html>
+
+    <head>
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <h1>PLAYERS</h1>
+
+        <table>
+            <tr>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>AGE</th>
+
+            </tr>
+
+            @foreach (var player in ViewData["players"] as IList<NewPlayer>)
+            {
+                <tr>
+                        <td>@player.PlayerFirstName</td>
+                                    <td>@player.PlayerLastName</td>
+                    <td>@player.Age</td>
+                </tr>
+            }
+
+        </table>
+
+    </body>
+
+    </html>
