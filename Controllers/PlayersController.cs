@@ -1,29 +1,28 @@
 using dotnetNewProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
+
 namespace PlayersList;
 
 public class PlayersController : Controller
 {
-    // GET /players/leaderboard
-    [HttpGet]
-    public ActionResult Leaderboard()
+    // GET /players/PlayerInfo
+    public ActionResult PlayerInfo()
     {
-        IList<Player> playersList = new List<Player>() {
+        var playersList = new List<NewPlayer>() {
 
-                new Player(){ PlayerID=1, PlayerFirstName="Steve", Age = 21 },
-                new Player(){ PlayerID=2, PlayerFirstName="Bill", Age = 25 },
-                new Player(){ PlayerID=3, PlayerFirstName="Ram", Age = 20 },
-                new Player(){ PlayerID=4, PlayerFirstName="Ron", Age = 31 },
-                new Player(){ PlayerID=5, PlayerFirstName="Rob", Age = 19 }
+                new NewPlayer(){ PlayerID=1, PlayerFirstName="Olive", PlayerLastName="Tree", Age = 21 },
+                new NewPlayer(){ PlayerID=2, PlayerFirstName="Ray", PlayerLastName="O'Sun", Age = 25 },
+                new NewPlayer(){ PlayerID=3, PlayerFirstName="Rod", PlayerLastName="Knee", Age = 20 },
+                new NewPlayer(){ PlayerID=4, PlayerFirstName="Penelope", PlayerLastName="Cruz", Age = 31 },
             };
 
         ViewData["players"] = playersList;
 
         return View(); //the view for *this* controller / action combo
-        // Views/Players/Leaderboard.cshtml
+        // Views/Players/PlayerInfo.cshtml
 
-        // return View("~/Views/Players/Leaderboard.cshtml");
+        // return View("~/Views/Players/PlayerInfo.cshtml");
         // explicit - specifying manually - written it out
         //   pro - little more obvious / intuitive / easier to follow
         //
@@ -33,4 +32,5 @@ public class PlayersController : Controller
         // pro - saves typing, less noisy
 
     }
+
 }

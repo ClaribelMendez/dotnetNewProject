@@ -1,24 +1,42 @@
 ﻿@model dotnetNewProject.Controllers.Person;
 
 
-@{
-    @* var x = 1 + 3; *@
-    ViewData["Title"] = "Home Page";
-}
+
 
 <div class="text-center">
-    <h1 class="display-4">Welcome</h1>
-    <p> @Model.Name </p>
+    <h2 class="display-4">PING PONG TOURNAMENTS 2022</h2>
+    @* <p> @Model.Name </p> leaving here momentarily to remember this *@
+    <br>
+<img src="https://www.vectorgraphit.com/wp-content/uploads/2014/11/pingpong-preview.jpg" alt="playing ping pong">
+    <br>
+    <br>
 </div>
-
-
-
-@{
-    ViewData["Title"] = "Home Page";
-}
+    <br>
 
 <div class="text-center">
-   
-    <p> <a asp-action="Login">Registration form</a>   </p>
-</div>
+    <h3>
+     @Html.ActionLink("Sign up here", "Login", "Form") </h3>
+    <br>
+    <p>
+        Lorem impsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore
+        magna aliqua. Integer vitae justo eget magna. Erat imperdiet sed euismod nisi porta lorem. Ut tortor pretium
+        viverra suspendisse potenti. Erat velit scelerisque in dictum. Et netus et malesuada fames. Enim diam vulputate
+        ut pharetra sit amet aliquam id diam. Aliquet eget sit amet tellus cras. Ultrices mi tempus imperdiet nulla
+        malesuada pellentesque elit eget. Congue mauris rhoncus aenean vel elit scelerisque mauris. Ultrices gravida
+        dictum fusce ut placerat orci. Pharetra et ultrices neque ornare. Condimentum lacinia quis vel eros donec ac
+        odio tempor. Porta nibh venenatis cras sed felis eget velit. Massa placerat duis ultricies lacus. Eleifend donec
+        pretium vulputate sapien. Id semper risus in hendrerit gravida. Quisque id diam vel quam elementum. Massa sed
+        elementum tempus egestas sed sed risus pretium quam.
 
+        Nunc scelerisque viverra mauris in aliquam sem fringilla. Tortor condimentum lacinia quis vel eros donec ac.
+        Malesuada proin libero nunc consequat interdum. Blandit cursus risus at ultrices mi. Ligula ullamcorper
+        malesuada proin libero nunc consequat interdum varius sit. Nulla at volutpat diam ut venenatis tellus. Purus ut
+        faucibus pulvinar elementum integer. A iaculis at erat pellentesque adipiscing commodo elit at. Ornare quam
+        viverra orci sagittis eu volutpat odio facilisis mauris. Lacus sed viverra tellus in hac. Fermentum leo vel orci
+        porta non pulvinar. Donec massa sapien faucibus et molestie ac. Sit amet massa vitae tortor. Integer malesuada
+        nunc vel risus commodo viverra maecenas. Libero id faucibus nisl tincidunt eget nullam non nisi est. Vitae
+        sapien pellentesque habitant morbi tristique senectus et netus.
+
+
+    </p>
+</div>

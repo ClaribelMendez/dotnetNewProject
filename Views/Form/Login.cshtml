@@ -1,4 +1,4 @@
-@model Player
+@model NewPlayer
 @using registrationForm.Controllers;
 
 @{
@@ -7,23 +7,33 @@
 
 <h1>Register</h1>
 
-@using  (Html.BeginForm("Login", "Form", FormMethod.Post))
+@using Html.BeginForm("Login", "Form", FormMethod.Post))
 {
     <div>
-        
-        First Name: @Html.TextBoxFor(m => m.PlayerFirstName)
+
+    @* NOTE: First Name: @Html.TextBoxFor(m => m.PlayerFirstName) *@
+
+    First Name:
+    <br>
+
+    @Html.TextBox("PlayerFirstName")
+    @Html.ValidationMessage("PlayerFirstName")
     </div>
-     <div>
-        Last Name: @Html.TextBox("Last Name")
-    </div>
-     <div>
-        Age: @Html.TextBox("Age")
-    </div>
-     <div>
-        <input type="submit" value="Submit"/>
-    </div>
+ <div>
+Last Name:
+    br>
+   @Html.TextBox("PlayerLastName") 
+
+    <div>
+    Age:
+   <br>
+   </div>
+    @* <div>
+    Have you played before?:
+    <br>
+    @Html.DropDownList("PlayerExperience")
+</div> *@
+    <div>
+    <input type="submit" value="Submit" />
+</div>
 }
-
- @ViewBag.name
-
-

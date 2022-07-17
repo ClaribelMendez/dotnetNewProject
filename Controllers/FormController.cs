@@ -9,17 +9,25 @@ public class FormController : Controller
 
     public IActionResult Login()
     {
-        return View(new Player());
+        return View();
     }
 
-
+    // [
+    //     'key': value
+    //     'PlayerFirstName': kyle
+    //     'PlayerLastName': mit
+    //     id: 7
+    // ]
     [HttpPost]
-    public ActionResult Login(Player player)
+    public ActionResult Login(NewPlayer player)
     {
+        // NOTE: (string PlayerLastName)
+        TempData["lastName"] = player.PlayerLastName;
 
-        ViewBag.name = player.PlayerFirstName;
+        TempData["firstName"] = player.PlayerFirstName;
 
-        return View();
+
+        return RedirectToAction("PlayerInfo", "Players");
     }
 
 }
