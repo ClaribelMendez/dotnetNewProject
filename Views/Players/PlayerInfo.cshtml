@@ -1,28 +1,26 @@
 ﻿@using dotnetNewProject.Models
-@model NewPlayer
+@model Player
 
-<ul>
-    @foreach (var player in ViewData["players"] as IList<NewPlayer>)
+@* <ul>
+    @foreach (var player in ViewData["players"] as IList<Player>)
     {
         <li>
-            @player.PlayerFirstName @player.PlayerLastName @player.Age
+            @player.FirstName @player.LastName @player.Age
             <hr>
 
         </li>
-    }
-    <div>
+    } *@
+    @* <div>
 
         <li>
-            @TempData["firstName"] @TempData["lastName"]
+            @TempData["firstName"] 
+            @TempData["lastName"] 
+            @TempData["age"] 
+            @* TODO: fix error @((Teams)TempData["team"]) 
+            @TempData["team"]
         </li>
-    </div>
-    <hr>
+    </div> *@
 
-
-
-    <html>
-
-    <head>
         <style>
             table,
             th,
@@ -30,9 +28,6 @@
                 border: 1px solid black;
             }
         </style>
-    </head>
-
-    <body>
 
         <h1>PLAYERS</h1>
 
@@ -41,20 +36,24 @@
                 <th>FIRST NAME</th>
                 <th>LAST NAME</th>
                 <th>AGE</th>
+                <th>Team</th>
 
             </tr>
 
-            @foreach (var player in ViewData["players"] as IList<NewPlayer>)
+            @foreach (var player in ViewData["players"] as IList<Player>)
             {
                 <tr>
-                        <td>@player.PlayerFirstName</td>
-                                    <td>@player.PlayerLastName</td>
+                    <td>@player.FirstName</td>
+                    <td>@player.LastName</td>
                     <td>@player.Age</td>
+                    <td>@player.Team</td>
                 </tr>
             }
+                <tr>
+                    <td>@TempData["firstName"]</td>
+                    <td>@TempData["lastName"]</td>
+                    <td>@TempData["age"]</td>
+                    <td>@TempData["team"]</td>
+                </tr>
 
         </table>
-
-    </body>
-
-    </html>

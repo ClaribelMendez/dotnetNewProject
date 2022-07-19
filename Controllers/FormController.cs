@@ -14,17 +14,19 @@ public class FormController : Controller
 
     // [
     //     'key': value
-    //     'PlayerFirstName': kyle
-    //     'PlayerLastName': mit
+    //     'FirstName': kyle
+    //     'LastName': mit
     //     id: 7
     // ]
     [HttpPost]
-    public ActionResult Login(NewPlayer player)
+    public ActionResult Login(Player player)
     {
-        // NOTE: (string PlayerLastName)
-        TempData["lastName"] = player.PlayerLastName;
+        // NOTE: (string LastName)
+        TempData["lastName"] = player.LastName;
+        TempData["firstName"] = player.FirstName;
+        TempData["age"] = player.Age;
+        TempData["team"] = player.Team;
 
-        TempData["firstName"] = player.PlayerFirstName;
 
 
         return RedirectToAction("PlayerInfo", "Players");

@@ -1,28 +1,28 @@
-@model NewPlayer;
+@model Player;
 @using registrationForm.Controllers;
 
 @{
     ViewData["Title"] = "Register";
 }
 
-<h1>Register</h1>
+<h1>@ViewData["Title"]</h1>
 
 @using (Html.BeginForm("Login", "Form", FormMethod.Post))
 {
     <div>
 
-    @* NOTE: First Name: @Html.TextBoxFor(m => m.PlayerFirstName) *@
+    @* NOTE: First Name: @Html.TextBoxFor(m => m.FirstName) *@
 
         First Name:
             <br>
 
-            @Html.TextBox("PlayerFirstName")
-            @Html.ValidationMessage("PlayerFirstName")
+            @Html.TextBox("FirstName")
+            @Html.ValidationMessage("FirstName")
             <br>
 
         Last Name:
             <br>
-            @Html.TextBox("PlayerLastName") 
+            @Html.TextBox("LastName") 
             <br>
 
         Age:
@@ -31,13 +31,12 @@
             <br>
             <br>
 
-            @Html.DropDownListFor(m => m.PlayerTeam, new List<SelectListItem>
-                   { new SelectListItem{Text="Creators", Value="Creators"},
-                     new SelectListItem{Text="Discovery", Value="Discover"},
-                     new SelectListItem{Text="Reach", Value="Reach"}}, "Select your team")
+            @Html.DropDownListFor(m => m.Team, new List<SelectListItem>
+                   { new SelectListItem{Text="Creators", Value="1"},
+                     new SelectListItem{Text="Discovery", Value="2"},
+                     new SelectListItem{Text="Reach", Value="3"}}, "Select your team")
             <br>
             <br>
-
 
         <input type="submit" value="Submit" />
     </div>

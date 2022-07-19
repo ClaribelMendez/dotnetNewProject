@@ -9,12 +9,17 @@ public class PlayersController : Controller
     // GET /players/PlayerInfo
     public ActionResult PlayerInfo()
     {
-        var playersList = new List<NewPlayer>() {
+        var playersList = new List<Player>() {
+            new Player(1, "Olive", "Tree", 21, (Teams)1),
+            new Player(2, "Ray", "O'Sun", 25, (Teams)2),
+            new Player(3, "Rod", "Knee", 20, (Teams)3),
+            new Player(4, "Penelope", "Cruz", 31, (Teams)1)
 
-                new NewPlayer(){ PlayerID=1, PlayerFirstName="Olive", PlayerLastName="Tree", Age = 21 },
-                new NewPlayer(){ PlayerID=2, PlayerFirstName="Ray", PlayerLastName="O'Sun", Age = 25 },
-                new NewPlayer(){ PlayerID=3, PlayerFirstName="Rod", PlayerLastName="Knee", Age = 20 },
-                new NewPlayer(){ PlayerID=4, PlayerFirstName="Penelope", PlayerLastName="Cruz", Age = 31 },
+
+                // new Player(){ PlayerID=1, FirstName="Olive", LastName="Tree", Age = 21 },
+                // new Player(){ PlayerID=2, FirstName="Ray", LastName="O'Sun", Age = 25 },
+                // new Player(){ PlayerID=3, FirstName="Rod", LastName="Knee", Age = 20 },
+                // new Player(){ PlayerID=4, FirstName="Penelope", LastName="Cruz", Age = 31 },
             };
 
         ViewData["players"] = playersList;
