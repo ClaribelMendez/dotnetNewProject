@@ -1,4 +1,3 @@
-
 using dotnetNewProject.Models;
 using Microsoft.AspNetCore.Mvc;
 
@@ -7,25 +6,28 @@ namespace PlayersList;
 
 public class PlayersController : Controller
 {
-    // GET /players/leaderboard
-    [HttpGet]
-    public ActionResult Leaderboard()
+    // GET /players/PlayerInfo
+    public ActionResult PlayerInfo()
     {
-        IList<Player> playersList = new List<Player>() {
+        var playersList = new List<Player>() {
+            new Player(1, "Olive", "Tree", 21, (Teams)1),
+            new Player(2, "Ray", "O'Sun", 25, (Teams)2),
+            new Player(3, "Rod", "Knee", 20, (Teams)3),
+            new Player(4, "Penelope", "Cruz", 31, (Teams)1)
 
-                new Player(){ PlayerID=1, PlayerFirstName="Steve", Age = 21 },
-                new Player(){ PlayerID=2, PlayerFirstName="Bill", Age = 25 },
-                new Player(){ PlayerID=3, PlayerFirstName="Ram", Age = 20 },
-                new Player(){ PlayerID=4, PlayerFirstName="Ron", Age = 31 },
-                new Player(){ PlayerID=5, PlayerFirstName="Rob", Age = 19 }
+
+                // new Player(){ PlayerID=1, FirstName="Olive", LastName="Tree", Age = 21 },
+                // new Player(){ PlayerID=2, FirstName="Ray", LastName="O'Sun", Age = 25 },
+                // new Player(){ PlayerID=3, FirstName="Rod", LastName="Knee", Age = 20 },
+                // new Player(){ PlayerID=4, FirstName="Penelope", LastName="Cruz", Age = 31 },
             };
 
         ViewData["players"] = playersList;
 
         return View(); //the view for *this* controller / action combo
-        // Views/Players/Leaderboard.cshtml
+        // Views/Players/PlayerInfo.cshtml
 
-        // return View("~/Views/Players/Leaderboard.cshtml");
+        // return View("~/Views/Players/PlayerInfo.cshtml");
         // explicit - specifying manually - written it out
         //   pro - little more obvious / intuitive / easier to follow
         //
@@ -35,6 +37,5 @@ public class PlayersController : Controller
         // pro - saves typing, less noisy
 
     }
-
 
 }

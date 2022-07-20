@@ -1,0 +1,62 @@
+﻿@using dotnetNewProject.Models
+@model Player
+
+<ul>
+    @foreach (var player in ViewData["players"] as IList<Player>)
+    {
+        <li>
+            @player.FirstName @player.LastName @player.Age
+            <hr>
+
+        </li>
+    } 
+    <div>
+
+        @if(TempData["team"] != null)
+        {
+         <li>
+            @TempData["firstName"] 
+            @TempData["lastName"] 
+            @TempData["age"] 
+            @((Teams)TempData["team"])
+        </li>
+        }
+      
+    </div> 
+
+        <style>
+            table,
+            th,
+            td {
+                border: 1px solid black;
+            }
+        </style>
+
+        <h1>PLAYERS</h1>
+
+        <table>
+            <tr>
+                <th>FIRST NAME</th>
+                <th>LAST NAME</th>
+                <th>AGE</th>
+                <th>Team</th>
+
+            </tr>
+
+            @foreach (var player in ViewData["players"] as IList<Player>)
+            {
+                <tr>
+                    <td>@player.FirstName</td>
+                    <td>@player.LastName</td>
+                    <td>@player.Age</td>
+                    <td>@player.Team</td>
+                </tr>
+            }
+                <tr>
+                    <td>@TempData["firstName"]</td>
+                    <td>@TempData["lastName"]</td>
+                    <td>@TempData["age"]</td>
+                    <td>@TempData["team"]</td>
+                </tr>
+
+        </table>
