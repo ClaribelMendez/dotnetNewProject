@@ -9,35 +9,41 @@
 
 @using (Html.BeginForm("Login", "Form", FormMethod.Post))
 {
-    <div>
-
+    <div class = "formTitles" >
     @* NOTE: First Name: @Html.TextBoxFor(m => m.FirstName) *@
-
         First Name:
-            <br>
+    </div>
 
+        <div>
             @Html.TextBox("FirstName")
             @Html.ValidationMessage("FirstName")
-            <br>
+        </div>
 
+    <div class = ""formTitles"" >
         Last Name:
-            <br>
+    </div>
+
+        <div>
             @Html.TextBox("LastName") 
-            <br>
+        </div>
 
+     <div class = ""formTitles"" >
         Age:
-            <br>
+    </div>
+
+        <div>
             @Html.TextBox("Age")
-            <br>
-            <br>
+        </div>
 
-            @Html.DropDownListFor(m => m.Team, new List<SelectListItem>
-                   { new SelectListItem{Text="Creators", Value="1"},
-                     new SelectListItem{Text="Discovery", Value="2"},
-                     new SelectListItem{Text="Reach", Value="3"}}, "Select your team")
-            <br>
-            <br>
-
+    <div class = ""formTitles"">
+        @Html.DropDownListFor(m => m.Team, new List<SelectListItem>
+            {new SelectListItem{Text="Creators", Value="1"},
+            new SelectListItem{Text="Discovery", Value="2"},
+            new SelectListItem{Text="Reach", Value="3"}}, "Select your team")
+    </div>
+            
+    <div>
         <input type="submit" value="Submit" />
     </div>
+   
 }

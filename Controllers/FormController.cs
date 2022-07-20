@@ -2,6 +2,7 @@ using System.Diagnostics;
 using Microsoft.AspNetCore.Mvc;
 using dotnetNewProject.Models;
 
+
 namespace registrationForm.Controllers;
 
 public class FormController : Controller

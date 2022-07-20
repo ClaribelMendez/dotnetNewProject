@@ -32,6 +32,15 @@ public class Player
     }
 
 }
+//NOTE: are the casing on the names correct?
+
+  public class NewPlayer{
+         static void Main()
+    {
+        var newPlayer = new Player();
+    }
+    
+}
 
 public enum Teams
 {

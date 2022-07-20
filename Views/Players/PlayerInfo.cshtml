@@ -1,7 +1,7 @@
 ﻿@using dotnetNewProject.Models
 @model Player
 
-@* <ul>
+<ul>
     @foreach (var player in ViewData["players"] as IList<Player>)
     {
         <li>
@@ -9,17 +9,20 @@
             <hr>
 
         </li>
-    } *@
-    @* <div>
+    } 
+    <div>
 
-        <li>
+        @if(TempData["team"] != null)
+        {
+         <li>
             @TempData["firstName"] 
             @TempData["lastName"] 
             @TempData["age"] 
-            @* TODO: fix error @((Teams)TempData["team"]) 
-            @TempData["team"]
+            @((Teams)TempData["team"])
         </li>
-    </div> *@
+        }
+      
+    </div> 
 
         <style>
             table,
