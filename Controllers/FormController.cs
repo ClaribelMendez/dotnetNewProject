@@ -20,15 +20,14 @@ public class FormController : Controller
     //     id: 7
     // ]
     [HttpPost]
-    public ActionResult Login(Player player)
+    public ActionResult Login(Player newPlayer)
     {
+
         // NOTE: (string LastName)
-        TempData["lastName"] = player.LastName;
-        TempData["firstName"] = player.FirstName;
-        TempData["age"] = player.Age;
-        TempData["team"] = player.Team;
-
-
+        TempData["lastName"] = newPlayer.LastName;
+        TempData["firstName"] = newPlayer.FirstName;
+        TempData["age"] = newPlayer.Age;
+        TempData["team"] = newPlayer.Team;
 
         return RedirectToAction("PlayerInfo", "Players");
     }

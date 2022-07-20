@@ -13,9 +13,7 @@ public class Player
     public string? LastName { get; set; }
     public int Age { get; set; }
     public Teams Team { get; set; }
-    //Is the ViewBag object necessary?
-    public object? ViewBag { get; set; }
-    public string? TotalPlayers { get; set; }
+    
 
     public Player(int playerID, string firstName, string lastName, int age, Teams team)
     {
@@ -29,15 +27,6 @@ public class Player
     public Player()
     {
 
-    }
-
-}
-//NOTE: are the casing on the names correct?
-
-  public class NewPlayer{
-         static void Main()
-    {
-        var newPlayer = new Player();
     }
     
 }
