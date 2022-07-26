@@ -1,8 +1,9 @@
 ﻿@using dotnetNewProject.Models
-@model Player
+@* @model Player *@
 
-<ul>
-    @foreach (var player in ViewData["players"] as IList<Player>)
+
+ <ul>
+    @foreach (var player in Model as IList<Player>)
     {
         <li>
             @player.FirstName @player.LastName @player.Age
@@ -43,7 +44,7 @@
 
             </tr>
 
-            @foreach (var player in ViewData["players"] as IList<Player>)
+            @foreach (var player in Model as IList<Player>)
             {
                 <tr>
                     <td>@player.FirstName</td>
@@ -59,4 +60,4 @@
                     <td>@TempData["team"]</td>
                 </tr>
 
-        </table>
+        </table> 
