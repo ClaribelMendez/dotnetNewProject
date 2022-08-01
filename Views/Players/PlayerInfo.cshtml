@@ -1,18 +1,19 @@
 ﻿@using dotnetNewProject.Models
-@* @model Player *@
-
-
+@model List<Player>
  <ul>
-    @foreach (var player in Model as IList<Player>)
+    @foreach (Player player in Model)
     {
-        <li>
+        <!-- NOTE: TO REMEMBER THIS IN CASE I USE IT AFTER <li>
             @player.FirstName @player.LastName @player.Age
             <hr>
 
-        </li>
+        </li> -->
+        <li>    <a asp-action="Profile" asp-route-id="@player.PlayerID">@player.FirstName</a> 
+</li>
     } 
-    <div>
 
+
+     
         @if(TempData["team"] != null)
         {
          <li>
