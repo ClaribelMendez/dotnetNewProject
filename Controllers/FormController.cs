@@ -12,18 +12,10 @@ public class FormController : Controller
     {
         return View();
     }
-
-    // [
-    //     'key': value
-    //     'FirstName': kyle
-    //     'LastName': mit
-    //     id: 7
-    // ]
+ 
     [HttpPost]
     public ActionResult Login(Player newPlayer)
     {
-
-        // NOTE: (string LastName)
         TempData["lastName"] = newPlayer.LastName;
         TempData["firstName"] = newPlayer.FirstName;
         TempData["age"] = newPlayer.Age;
