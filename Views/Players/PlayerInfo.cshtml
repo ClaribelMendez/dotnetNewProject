@@ -1,17 +1,15 @@
 ﻿@using dotnetNewProject.Models
-@model Player
-
+@model List<Player>
 <ul>
-    @foreach (var player in ViewData["players"] as IList<Player>)
+    @foreach (Player player in Model)
     {
-        <li>
-            @player.FirstName @player.LastName @player.Age
-            <hr>
-
+        <li> 
+            <a asp-action="Profile" asp-route-id="@player.PlayerID">@player.FirstName</a> 
         </li>
     } 
-    <div>
 
+
+     
         @if(TempData["team"] != null)
         {
          <li>
@@ -21,42 +19,41 @@
             @((Teams)TempData["team"])
         </li>
         }
+</ul>
       
-    </div> 
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
 
-        <style>
-            table,
-            th,
-            td {
-                border: 1px solid black;
-            }
-        </style>
+<h1>PLAYERS</h1>
 
-        <h1>PLAYERS</h1>
+<table>
+    <tr>
+        <th>FIRST NAME</th>
+        <th>LAST NAME</th>
+        <th>AGE</th>
+        <th>Team</th>
 
-        <table>
-            <tr>
-                <th>FIRST NAME</th>
-                <th>LAST NAME</th>
-                <th>AGE</th>
-                <th>Team</th>
+    </tr>
 
-            </tr>
+    @foreach (var player in Model as IList<Player>)
+    {
+        <tr>
+            <td>@player.FirstName</td>
+            <td>@player.LastName</td>
+            <td>@player.Age</td>
+            <td>@player.Team</td>
+        </tr>
+    }
+        <tr>
+            <td>@TempData["firstName"]</td>
+            <td>@TempData["lastName"]</td>
+            <td>@TempData["age"]</td>
+            <td>@TempData["team"]</td>
+        </tr>
 
-            @foreach (var player in ViewData["players"] as IList<Player>)
-            {
-                <tr>
-                    <td>@player.FirstName</td>
-                    <td>@player.LastName</td>
-                    <td>@player.Age</td>
-                    <td>@player.Team</td>
-                </tr>
-            }
-                <tr>
-                    <td>@TempData["firstName"]</td>
-                    <td>@TempData["lastName"]</td>
-                    <td>@TempData["age"]</td>
-                    <td>@TempData["team"]</td>
-                </tr>
-
-        </table>
+</table> 
